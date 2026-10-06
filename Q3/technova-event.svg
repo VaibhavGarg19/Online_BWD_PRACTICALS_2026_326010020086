@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-labelledby="title description">
+  <title id="title">TechNova 2026 Student Technology Showcase</title>
+  <desc id="description">A glowing digital circuit board with a central innovation symbol.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123d66"/>
+      <stop offset="1" stop-color="#171638"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#62e6d1"/>
+      <stop offset="1" stop-color="#7f8cff"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#d8e8ff" opacity=".22"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="440" fill="url(#background)"/>
+  <rect width="1200" height="440" fill="url(#dots)"/>
+  <g fill="none" stroke="url(#glow)" stroke-linecap="round" stroke-width="4" opacity=".7">
+    <path d="M0 95h145l54 54h106m-305 93h105l56-56h82M0 343h130l64-64h111"/>
+    <path d="M1200 78h-152l-52 52H889m311 102h-109l-55-55h-89m253 166h-128l-58-58h-84"/>
+    <path d="M292 0v66l58 58m500-124v68l-57 57M314 440v-60l55-55m517 115v-68l-55-55"/>
+  </g>
+  <g fill="#62e6d1">
+    <circle cx="305" cy="149" r="7"/><circle cx="292" cy="242" r="7"/>
+    <circle cx="305" cy="279" r="7"/><circle cx="889" cy="130" r="7"/>
+    <circle cx="932" cy="232" r="7"/><circle cx="883" cy="322" r="7"/>
+    <circle cx="350" cy="124" r="7"/><circle cx="886" cy="124" r="7"/>
+  </g>
+  <circle cx="600" cy="220" r="135" fill="#09172a" opacity=".7"/>
+  <circle cx="600" cy="220" r="118" fill="none" stroke="url(#glow)" stroke-width="3" opacity=".75"/>
+  <path d="M600 141v52m0 54v52m79-79h-52m-54 0h-52m135-56-37 37m-38 38-37 37m112 0-37-37m-38-38-37-37"
+        fill="none" stroke="#62e6d1" stroke-linecap="round" stroke-width="7"/>
+  <circle cx="600" cy="220" r="37" fill="url(#glow)"/>
+  <path d="m606 186-29 39h22l-5 29 30-41h-22z" fill="#09172a"/>
+  <text x="600" y="390" fill="#eef5ff" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="8" text-anchor="middle">BUILD · CONNECT · CREATE</text>
+</svg>
