@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Canvas Shapes &amp; Marwadi University Logo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #18304b;
+      background: #f3f6fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    main {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: #15365b;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    header p {
+      margin: 0;
+      color: #52677f;
+      line-height: 1.6;
+    }
+
+    .examples {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    section {
+      padding: 24px;
+      border: 1px solid #dce5ef;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgb(28 54 82 / 7%);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      color: #15365b;
+      font-size: 1.25rem;
+    }
+
+    section p {
+      margin: 0 0 18px;
+      color: #52677f;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #dce5ef;
+      border-radius: 10px;
+      background: #fbfdff;
+    }
+
+    .logo-wrap {
+      display: grid;
+      min-height: 260px;
+      place-items: center;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f5f8fc;
+    }
+
+    .logo-wrap img {
+      display: block;
+      width: min(100%, 360px);
+      height: auto;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 28px 16px;
+      }
+
+      .examples {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Canvas Shapes &amp; Marwadi University Logo</h1>
+      <p>Explore basic shapes drawn with HTML5 Canvas alongside the Marwadi University logo.</p>
+    </header>
+
+    <div class="examples">
+      <section aria-labelledby="canvas-heading">
+        <h2 id="canvas-heading">HTML5 Canvas</h2>
+        <p>A rectangle, circle, line, and text are drawn on the canvas below.</p>
+        <canvas id="shape-canvas" width="600" height="340" role="img" aria-label="A blue rectangle, a gold circle, a green diagonal line, and the text Canvas Shapes">
+          Your browser does not support the HTML5 canvas element.
+        </canvas>
+      </section>
+
+      <section aria-labelledby="logo-heading">
+        <h2 id="logo-heading">Marwadi University Logo</h2>
+        <p>The Marwadi University logo from the student portal</p>
+        <div class="logo-wrap">
+          <img src="Marwadi%20university%20Logo.png" alt="Marwadi University — Marwadi Chandarana Group">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("shape-canvas");
+    const context = canvas.getContext("2d");
+
+    if (context) {
+      context.fillStyle = "#3678c5";
+      context.fillRect(40, 42, 180, 100);
+
+      context.beginPath();
+      context.arc(380, 92, 52, 0, Math.PI * 2);
+      context.fillStyle = "#e9b949";
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(55, 220);
+      context.lineTo(545, 175);
+      context.strokeStyle = "#26866a";
+      context.lineWidth = 6;
+      context.lineCap = "round";
+      context.stroke();
+
+      context.fillStyle = "#18304b";
+      context.font = "bold 28px Arial, sans-serif";
+      context.textAlign = "center";
+      context.fillText("Canvas Shapes", 300, 285);
+    }
+  </script>
+</body>
+</html>
