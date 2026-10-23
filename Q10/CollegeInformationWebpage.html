@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Marwadi University | College Information</title>
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #18304b;
+      background: #f3f6fb;
+      font-synthesis: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 36px 20px;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+    }
+
+    .college-header,
+    .card {
+      border: 1px solid #dce5ef;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgb(28 54 82 / 7%);
+    }
+
+    .college-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 22px;
+      padding: 24px;
+    }
+
+    .college-header img {
+      width: min(38%, 300px);
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      color: #15365b;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+    }
+
+    .college-header p,
+    .card p {
+      color: #52677f;
+      line-height: 1.6;
+    }
+
+    .college-header p {
+      margin: 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+    }
+
+    .address {
+      margin: 0 0 20px;
+    }
+
+    button {
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #176b87;
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #10546b;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid #e9b949;
+      outline-offset: 3px;
+    }
+
+    #location-result {
+      min-height: 48px;
+      margin: 14px 0 0;
+      overflow-wrap: anywhere;
+    }
+
+    #location-result a,
+    .map-link {
+      color: #176b87;
+      font-weight: 700;
+    }
+
+    .map-frame {
+      display: block;
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 10px;
+      background: #eef3f7;
+    }
+
+    .map-caption {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 22px 0 0;
+      color: #52677f;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 20px 14px;
+      }
+
+      .college-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .college-header img {
+        width: min(100%, 300px);
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="college-header">
+      <img src="../Q9/Marwadi%20university%20Logo.png" alt="Marwadi University — Marwadi Chandarana Group">
+      <div>
+        <h1>Marwadi University</h1>
+        <p>Learn, grow, and shape the future at our Rajkot campus.</p>
+      </div>
+    </header>
+
+    <div class="content-grid">
+      <section class="card" aria-labelledby="location-heading">
+        <h2 id="location-heading">College Location</h2>
+        <p class="address"><strong>Address:</strong><br>Marwadi University, Rajkot-Morbi Road, Rajkot 360 003, Gujarat, India</p>
+        <p>Use the button to share your current device location. Your browser will ask for permission before providing it.</p>
+        <button id="locate-button" type="button">Find my current location</button>
+        <p id="location-result" role="status" aria-live="polite">Your location has not been requested.</p>
+      </section>
+
+      <section class="card" aria-labelledby="map-heading">
+        <h2 id="map-heading">Campus Map</h2>
+        <iframe
+          class="map-frame"
+          title="Map showing Marwadi University in Rajkot"
+          src="https://maps.google.com/maps?q=Marwadi%20University%2C%20Rajkot&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <p class="map-caption"><strong>Why use an iframe?</strong> An iframe embeds a separate webpage inside this page. Here, it lets you view and interact with an external map without leaving the college information page. <a class="map-link" href="https://maps.google.com/?q=Marwadi+University,+Rajkot" target="_blank" rel="noopener noreferrer">Open the map in a new tab</a>.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Marwadi University</p>
+    </footer>
+  </main>
+
+  <script>
+    const locateButton = document.getElementById("locate-button");
+    const locationResult = document.getElementById("location-result");
+
+    locateButton.addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        locationResult.textContent = "Geolocation is not supported by this browser.";
+        return;
+      }
+
+      locateButton.disabled = true;
+      locationResult.textContent = "Requesting your location…";
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude, accuracy } = position.coords;
+          const mapUrl = `https://maps.google.com/?q=${latitude},${longitude}`;
+
+          locationResult.replaceChildren();
+          locationResult.append(
+            `Latitude: ${latitude.toFixed(5)}, Longitude: ${longitude.toFixed(5)} (accurate to about ${Math.round(accuracy)} m). `
+          );
+          const mapLink = document.createElement("a");
+          mapLink.href = mapUrl;
+          mapLink.target = "_blank";
+          mapLink.rel = "noopener noreferrer";
+          mapLink.textContent = "View your location on a map";
+          locationResult.append(mapLink);
+          locateButton.disabled = false;
+        },
+        (error) => {
+          const messages = {
+            1: "Location permission was denied. Allow location access in your browser settings and try again.",
+            2: "Your location is currently unavailable. Check your device location settings and try again.",
+            3: "The location request timed out. Please try again."
+          };
+
+          locationResult.textContent = messages[error.code] || "Unable to retrieve your location. Please try again.";
+          locateButton.disabled = false;
+        },
+        { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 }
+      );
+    });
+  </script>
+</body>
+</html>
