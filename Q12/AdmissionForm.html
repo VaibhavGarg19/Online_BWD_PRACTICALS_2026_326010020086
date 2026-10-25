@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="admission-card" aria-labelledby="form-title">
+            <header class="form-header">
+                <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                <h1 id="form-title">Student Admission</h1>
+                <p class="intro">Complete the form below to apply for admission. We’re excited to learn more about you.</p>
+                <div class="step-indicator" aria-label="Application form">
+                    <span class="step-number">01</span>
+                    <span>Applicant details</span>
+                    <span class="step-line" aria-hidden="true"></span>
+                    <span class="step-muted">02&nbsp; Review</span>
+                </div>
+            </header>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal information</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="first-name">First name <span class="required">*</span></label>
+                            <input type="text" id="first-name" name="first_name" placeholder="e.g. Aanya" autocomplete="given-name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="last-name">Last name <span class="required">*</span></label>
+                            <input type="text" id="last-name" name="last_name" placeholder="e.g. Sharma" autocomplete="family-name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="birth-date">Date of birth <span class="required">*</span></label>
+                            <input type="date" id="birth-date" name="birth_date" autocomplete="bday" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select an option</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Course preferences</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="course">Program of interest <span class="required">*</span></label>
+                            <select id="course" name="course" required>
+                                <option value="">Choose a program</option>
+                                <option value="computer-science">Computer Science</option>
+                                <option value="business">Business Administration</option>
+                                <option value="electronics">Electronics Engineering</option>
+                                <option value="design">Design and Media</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="start-term">Preferred start term <span class="required">*</span></label>
+                            <select id="start-term" name="start_term" required>
+                                <option value="">Choose a term</option>
+                                <option value="spring">Spring 2027</option>
+                                <option value="fall">Fall 2027</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Address</legend>
+                    <div class="form-grid">
+                        <div class="form-field form-field-wide">
+                            <label for="street">Street address <span class="required">*</span></label>
+                            <input type="text" id="street" name="street" placeholder="House number and street" autocomplete="street-address" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="city">City <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" placeholder="Your city" autocomplete="address-level2" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="postal-code">Postal code <span class="required">*</span></label>
+                            <input type="text" id="postal-code" name="postal_code" placeholder="Postal code" autocomplete="postal-code" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-field statement-field">
+                    <label for="statement">A little about yourself</label>
+                    <textarea id="statement" name="statement" rows="4" placeholder="Tell us about your interests and what you hope to achieve..."></textarea>
+                    <small>Share a few details that will help us get to know you.</small>
+                </div>
+
+                <label class="consent">
+                    <input type="checkbox" name="confirm_information" required>
+                    <span>I confirm that the information provided is accurate. <span class="required">*</span></span>
+                </label>
+
+                <button type="submit">Submit application <span aria-hidden="true">→</span></button>
+                <p class="required-note"><span class="required">*</span> Required fields</p>
+            </form>
+            <footer class="form-footer">Your information is used only to process your admission application.</footer>
+        </section>
+    </main>
+</body>
+</html>
