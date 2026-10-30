@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Report Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="report-card.js" defer></script>
+</head>
+<body>
+    <main class="page-shell">
+        <section class="report-card" aria-labelledby="page-title">
+            <header class="page-header">
+                <p class="eyebrow">ACADEMIC PERFORMANCE</p>
+                <h1 id="page-title">Student Report Card</h1>
+                <p>BCA1-S2026 · 2026–2027 Summer · Enter marks out of 100 for each subject.</p>
+            </header>
+
+            <form id="marks-form">
+                <div class="student-field">
+                    <label for="student-name">Student name <span class="optional">(optional)</span></label>
+                    <input type="text" id="student-name" name="student_name" placeholder="Enter student name" autocomplete="name">
+                </div>
+
+                <fieldset>
+                    <legend>Subject marks</legend>
+                    <p class="field-hint">Enter a mark from 0 to 100 for every subject.</p>
+                    <div class="subjects-grid">
+                        <div class="subject-field">
+                            <label for="entrepreneurship">Entrepreneurship</label>
+                            <input type="number" id="entrepreneurship" name="entrepreneurship" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                        <div class="subject-field">
+                            <label for="mathematics1">Mathematics 1</label>
+                            <input type="number" id="mathematics1" name="mathematics1" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                        <div class="subject-field">
+                            <label for="aoc">Architectural Of Computer</label>
+                            <input type="number" id="aoc" name="aoc" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                        <div class="subject-field">
+                            <label for="pp1">Programming Practice 1</label>
+                            <input type="number" id="pp1" name="pp1" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                        <div class="subject-field">
+                            <label for="bwd-theory">Basics of Web Development</label>
+                            <input type="number" id="bwd-theory" name="bwd_theory" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                        <div class="subject-field">
+                            <label for="es">Environmental Science</label>
+                            <input type="number" id="es" name="es" min="0" max="100" step="any" placeholder="0–100" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Calculate result <span aria-hidden="true">→</span></button>
+                    <button class="button button-secondary" type="reset">Clear marks</button>
+                </div>
+            </form>
+
+            <p class="form-message" id="form-message" role="alert" hidden></p>
+
+            <section class="result-panel" id="result-panel" aria-labelledby="result-title" aria-live="polite" hidden>
+                <div class="result-heading">
+                    <div>
+                        <p class="eyebrow">YOUR SUMMARY</p>
+                        <h2 id="result-title">Result</h2>
+                        <p class="student-result-name" id="student-result-name"></p>
+                    </div>
+                    <div class="grade-badge" aria-label="Grade">
+                        <span id="grade-value"></span>
+                        <small>GRADE</small>
+                    </div>
+                </div>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <span>Total marks</span>
+                        <strong id="total-value"></strong>
+                        <small>out of 600</small>
+                    </div>
+                    <div class="result-stat">
+                        <span>Percentage</span>
+                        <strong id="percentage-value"></strong>
+                        <small>overall score</small>
+                    </div>
+                </div>
+                <p class="grade-note" id="grade-note"></p>
+            </section>
+
+            <footer class="page-footer">
+                Grading scale: A+ (90%+) · A (80%+) · B (70%+) · C (60%+) · D (50%+) · F (below 50%)
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
