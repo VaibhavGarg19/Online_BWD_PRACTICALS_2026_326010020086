@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Check a student's examination eligibility using age, attendance, and marks.">
+    <title>Student Eligibility Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="eligibility.js" defer></script>
+</head>
+<body>
+    <main class="page-shell">
+        <section class="eligibility-card" aria-labelledby="page-title">
+            <header class="page-header">
+                <p class="eyebrow">STUDENT SERVICES</p>
+                <h1 id="page-title">Eligibility Checker</h1>
+                <p>Enter the student’s details to check examination eligibility.</p>
+            </header>
+
+            <div class="criteria-note" aria-label="Eligibility criteria">
+                <strong>Eligibility criteria</strong>
+                <ul>
+                    <li>Age: 16 years or older</li>
+                    <li>Attendance: at least 75%</li>
+                    <li>Marks: at least 40%</li>
+                </ul>
+            </div>
+
+            <form id="eligibility-form">
+                <div class="form-field">
+                    <label for="student-name">Student name <span class="optional">(optional)</span></label>
+                    <input type="text" id="student-name" name="student_name" placeholder="Enter student name" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label for="age">Age <span class="required">*</span></label>
+                    <div class="input-with-unit">
+                        <input type="number" id="age" name="age" min="1" max="120" step="1" placeholder="e.g. 18" required>
+                        <span>years</span>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="attendance">Attendance percentage <span class="required">*</span></label>
+                    <div class="input-with-unit">
+                        <input type="number" id="attendance" name="attendance" min="0" max="100" step="any" placeholder="e.g. 82" required>
+                        <span>%</span>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="marks">Marks percentage <span class="required">*</span></label>
+                    <div class="input-with-unit">
+                        <input type="number" id="marks" name="marks" min="0" max="100" step="any" placeholder="e.g. 68" required>
+                        <span>%</span>
+                    </div>
+                </div>
+                <button type="submit">Check eligibility <span aria-hidden="true">→</span></button>
+                <p class="required-note"><span class="required">*</span> Required fields</p>
+            </form>
+
+            <footer class="page-footer">This checker provides a result based on the criteria shown above.</footer>
+        </section>
+    </main>
+</body>
+</html>
