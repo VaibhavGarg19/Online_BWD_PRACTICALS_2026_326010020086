@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Select a course subject to view its code, term, and course information.">
+    <title>My Subjects | Course Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="subjects.js" defer></script>
+</head>
+<body>
+    <main class="page-shell">
+        <header class="page-header">
+            <a class="brand" href="#" aria-label="Course explorer home"><span class="brand-mark">C</span> Course Explorer</a>
+            <div class="header-copy">
+                <p class="eyebrow">BCA1-S2026 · 2026–2027 SUMMER</p>
+                <h1>Your subjects,<br><span>at a glance.</span></h1>
+                <p>Select any subject to see its course details.</p>
+            </div>
+            <div class="term-badge"><span aria-hidden="true">✦</span> SUMMER TERM</div>
+        </header>
+
+        <section class="subject-explorer" aria-labelledby="subjects-heading">
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow">YOUR COURSE LIST</p>
+                    <h2 id="subjects-heading">Six subjects <span>to explore</span></h2>
+                </div>
+                <p class="selection-hint"><span class="hint-dot" aria-hidden="true"></span> Select a subject</p>
+            </div>
+
+            <div class="subject-layout">
+                <ul class="subject-list" id="subject-list" aria-label="Subjects">
+                    <li><button class="subject-option" type="button" data-index="0" aria-pressed="false"></button></li>
+                    <li><button class="subject-option" type="button" data-index="1" aria-pressed="false"></button></li>
+                    <li><button class="subject-option" type="button" data-index="2" aria-pressed="false"></button></li>
+                    <li><button class="subject-option" type="button" data-index="3" aria-pressed="false"></button></li>
+                    <li><button class="subject-option" type="button" data-index="4" aria-pressed="false"></button></li>
+                    <li><button class="subject-option" type="button" data-index="5" aria-pressed="false"></button></li>
+                </ul>
+
+                <article class="subject-detail" id="subject-detail" aria-live="polite" aria-labelledby="detail-title">
+                    <div class="detail-decoration" aria-hidden="true"></div>
+                    <div class="detail-content">
+                        <p class="detail-label" id="detail-label">SUBJECT DETAILS</p>
+                        <span class="detail-icon" id="detail-icon" aria-hidden="true">✦</span>
+                        <p class="detail-code" id="detail-code">Choose a subject</p>
+                        <h3 id="detail-title">Your next idea starts here.</h3>
+                        <p class="detail-description" id="detail-description">Select a course from the list to view its information.</p>
+                        <div class="detail-footer">
+                            <span class="term-icon" aria-hidden="true">◷</span>
+                            <span>Academic term</span>
+                            <strong id="detail-term">2026–2027 Summer</strong>
+                        </div>
+                    </div>
+                    <span class="detail-index" id="detail-index" aria-hidden="true">00</span>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <span>LEARN SOMETHING NEW EVERY DAY</span>
+            <a href="#subjects-heading">Back to subjects ↑</a>
+        </footer>
+    </main>
+</body>
+</html>
