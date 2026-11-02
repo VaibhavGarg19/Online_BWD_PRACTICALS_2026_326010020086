@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #20313a;
+    --muted: #6b7b82;
+    --navy: #183c50;
+    --teal: #167f7d;
+    --line: #dce6e8;
+    --paper: #f1f6f5;
+    --danger: #bd3d4b;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 42px 18px;
+    background:
+        radial-gradient(ellipse at 9% 8%, rgba(81, 169, 155, 0.18), transparent 34%),
+        radial-gradient(ellipse at 93% 92%, rgba(92, 130, 176, 0.16), transparent 35%),
+        var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.page-shell {
+    width: min(100%, 850px);
+    margin: 0 auto;
+}
+
+.registration-card {
+    overflow: hidden;
+    padding: 39px 48px 0;
+    border: 1px solid rgba(220, 230, 232, 0.9);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(24, 60, 80, 0.12);
+}
+
+.page-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 28px;
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    width: 31px;
+    height: 31px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #d5efb5;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.brand-accent {
+    color: var(--teal);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--teal);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+}
+
+h1,
+h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.15rem, 5vw, 2.8rem);
+}
+
+.header-copy {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.required {
+    color: #c24150;
+}
+
+.optional {
+    color: #8a989d;
+    font-size: 0.76rem;
+    font-weight: 400;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.section-number {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8f2ed;
+    color: var(--teal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 1.22rem;
+}
+
+.section-heading p {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.section-heading-next {
+    margin-top: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px 16px;
+}
+
+.form-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-field-wide {
+    grid-column: 1 / -1;
+}
+
+.form-field > label,
+.gender-field legend {
+    color: #334955;
+    font-size: 0.83rem;
+    font-weight: 650;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #cbd9de;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    color: var(--ink);
+    font-size: 0.86rem;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input::placeholder {
+    color: #9aa8ad;
+}
+
+input:hover,
+select:hover {
+    border-color: #91b9b5;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(22, 127, 125, 0.13);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+    border-color: var(--danger);
+}
+
+.gender-field {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.gender-field legend {
+    margin-bottom: 9px;
+    padding: 0;
+}
+
+.gender-options {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 13px;
+}
+
+.radio-option,
+.consent-option {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+    color: #53656e;
+    font-size: 0.77rem;
+}
+
+.radio-option {
+    align-items: center;
+    white-space: nowrap;
+}
+
+.radio-option input,
+.consent-option input {
+    flex: 0 0 auto;
+    margin: 0;
+    accent-color: var(--teal);
+}
+
+.radio-option input {
+    width: 15px;
+    height: 15px;
+}
+
+.field-hint {
+    margin: -2px 0 0;
+    color: var(--muted);
+    font-size: 0.69rem;
+}
+
+.field-error {
+    min-height: 0;
+    color: var(--danger);
+    font-size: 0.72rem;
+}
+
+.field-error:not(:empty) {
+    min-height: 1em;
+}
+
+.form-bottom {
+    margin-top: 27px;
+    padding-top: 19px;
+    border-top: 1px solid #e9eeee;
+}
+
+.consent-option {
+    line-height: 1.5;
+}
+
+.consent-option input {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+}
+
+.terms-error {
+    display: block;
+    margin-top: 4px;
+}
+
+.submit-button {
+    display: flex;
+    width: 100%;
+    min-height: 49px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 19px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(105deg, #176b70, #27948a);
+    box-shadow: 0 7px 16px rgba(22, 127, 125, 0.2);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(22, 127, 125, 0.27);
+    filter: brightness(1.05);
+}
+
+.submit-button:focus-visible {
+    outline: 3px solid rgba(22, 127, 125, 0.35);
+    outline-offset: 3px;
+}
+
+.form-status {
+    margin: 10px 0 19px;
+    color: #26734f;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.card-footer {
+    margin: 0 -48px;
+    padding: 16px 22px;
+    border-top: 1px solid #edf1f1;
+    background: #f8faf9;
+    color: #75848a;
+    font-size: 0.72rem;
+    text-align: center;
+}
+
+@media (max-width: 620px) {
+    body {
+        padding: 20px 11px;
+    }
+
+    .registration-card {
+        padding: 29px 19px 0;
+        border-radius: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-field-wide {
+        grid-column: auto;
+    }
+
+    .gender-options {
+        gap: 10px 15px;
+    }
+
+    .card-footer {
+        margin: 0 -19px;
+        padding: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
